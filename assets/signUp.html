@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/sign.css">
+  <title> Sign Up</title>
+
+</head>
+
+<body>
+
+  <form id="signUp-form">
+    <div class="logo">
+      <h3>Marble<span>Link</span></h3>
+      <h5>Sign Up</h5>
+
+    </div>
+
+    <div class="container">
+      <label for="name"><b>Name</b></label>
+      <input type="text" id="name_input" placeholder="Enter Name" name="name" required>
+      <p id="validate-name"></p>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" id="email_input" placeholder="Enter Email" name="email" required>
+      <p id="validate-email"></p>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" id="password_input" placeholder="Enter Password" name="psw" required>
+      <p id="validate-password"></p>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" id="password-repeat-input" placeholder="Repeat Password" name="psw-repeat" required>
+      <p id="validate-repeat-password"></p>
+
+      <label>
+        <input type="checkbox" checked name="remember"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#">Terms &
+          Privacy</a>.</p>
+
+
+        <button type="button" id="signup-btn" class="signupbtn">Sign Up</button>
+    </div>
+
+    <div class="container">
+      <span>Do you already have an account?</span>
+      <button type="button" class="cancelbtn"> <a href="logIn.html">Login</a> </button>
+    </div>
+    
+
+  </form>
+
+  <script  type="module" src="js/signUp.js"></script>
+
+</body>
+</html>
