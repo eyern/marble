@@ -1,0 +1,41 @@
+:root {
+  /* Background colors */
+  --bg-color: #ebecee;
+
+  --navbar-bg-color: #008080;
+
+  --sidebar-primary-bg-color: #272b34;
+  --sidebar-secondary-bg-color: #3f4551;
+
+  --warning-bg-color: #ffc107;
+  --hover-warning-bg-color: #e0a800;
+
+  --success-bg-color: #28a745;
+  --hover-success-bg-color: #218838;
+
+  --danger-bg-color: #dc3545;
+  --hover-danger-bg-color: #c82333;
+
+  /* alerts*/
+  --alert-danger : #f8d7da;
+  --alert-danger-text: #721c24;
+  --alert-danger-border: #f5c6cb;
+
+  --alert-success : #d4edda;
+  --alert-success-text: #155724;
+  --alert-success-border: #c3e6cb;
+
+  /* Button colors */
+  --primary-button-color: #015e5f;
+  --hover-primary-button-color: #054346;
+
+  /* Text colors */
+  --primary-text-color: #1b1b1b;
+  --secondary-text-color: #e6e6e6;
+  --text-success: #28a745;
+  --text-warning: #ffc107;
+  --text-danger: #dc3545;
+
+  /* Font family for all pages */
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}

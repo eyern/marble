@@ -1,0 +1,568 @@
+@import "color-scheme.css";
+
+/**** Reset ****/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: content-box;
+}
+
+/**** Start global styles *****/
+
+body {
+        background-color: var(--bg-color);
+        color: var(--primary-text-color);
+}
+
+/* alerts */
+.alert-danger {
+    background-color: var(--alert-danger);
+    border: 1px solid var(--alert-danger-border);
+    color: var(--alert-danger-text);
+    width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: var(--alert-success);
+    border: 1px solid var(--alert-success-border);
+    color: var(--alert-success-text);
+    width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+/* Butttons */
+.btn-primary{
+  background-color: var(--primary-button-color);
+  transition: background-color 0.5s;
+}
+
+.btn-primary:hover {
+background-color: var(--hover-primary-button-color);
+}
+
+.btn-success {
+background-color: var(--success-bg-color);
+transition: background-color 0.5s;
+}
+
+.btn-success:hover{
+background-color: var(--hover-success-bg-color);
+}
+
+.btn-danger {
+background-color: var(--danger-bg-color);
+transition: background-color 0.5s;
+}
+
+.btn-danger:hover{
+background-color: var(--hover-danger-bg-color);
+}
+
+.btn-warning {
+background-color: var(--warning-bg-color);
+transition: background-color 0.5s;
+}
+
+.btn-warning:hover{
+background-color: var(--hover-warning-bg-color);
+}
+
+/**** End global styles ****/
+
+/*************************************************************************************/
+
+/**** Start admin style ****/
+
+
+/** Start of Header **/
+header{
+  z-index: 1;
+  position: fixed;
+  background: var(--navbar-bg-color);
+  padding: 20px;
+  width: 100%;
+  top: 0;
+  height: 30px;
+}
+
+.left_area h3{
+  color: var(--secondary-text-color);
+  margin: 0 0 0 75px;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.left_area span{
+  color: var(--sidebar-primary-bg-color);
+}
+
+.logout_btn{
+  padding: 5px;
+  background: var(--primary-button-color);
+  text-decoration: none;
+  float: right;
+  margin-top: -25px;
+  margin-right: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-text-color);
+  transition: background-color 0.5s;
+}
+
+.logout_btn:hover{
+  background: var(--hover-primary-button-color);
+}
+/** End of Header **/
+
+/** Start of Sidebar **/
+.sidebar{
+  z-index: 1;
+  background: var(--sidebar-primary-bg-color);
+  margin-top: 70px;
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: calc(100% - 15.65%);
+  transition: 0.5s;
+  transition-property: left;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.profile_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar .profile_info .profile_image{
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.sidebar .profile_info h4{
+  color: var(--secondary-text-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.fa-shopping-cart:after {
+    display: none;
+}
+
+.sidebar a{
+  color: var(--secondary-text-color);
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-left: 40px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.sidebar a:hover{
+  background: var(--sidebar-secondary-bg-color);
+  color: var(--navbar-bg-color);
+}
+
+.sidebar i{
+  padding-right: 10px;
+}
+
+label #sidebar_btn{
+  z-index: 1;
+  color: var(--secondary-text-color);
+  position: fixed;
+  cursor: pointer;
+  left: 50px;
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.5s;
+  transition-property: color;
+}
+
+label #sidebar_btn:hover{
+  color: var(--sidebar-primary-bg-color);
+}
+
+#check:checked ~ .sidebar{
+  left: -185px;
+}
+
+#check:checked ~ .sidebar a span, #check:checked ~ .sidebar .profile_info{
+  display: none;
+}
+.sidebar a span i{
+  margin-left: 20px;
+}
+
+#check:checked ~ .sidebar a{
+  font-size: 20px;
+  margin-left: 169px;
+  width: 100%;
+}
+
+.admin-content{
+  width: (100% - 250px);
+  margin-top: 60px;
+  padding: 20px 0 0 0;
+  margin-left: 250px;
+  /* height: 100vh; */
+  transition: 0.5s;
+}
+
+#check:checked ~ .admin-content{
+  margin-left: 60px;
+}
+#check{
+  display: none;
+}
+
+
+#category-list , #product-list {
+  list-style: none;
+}
+
+#category-list li a, #product-list li a{
+  padding-left: 55px;
+}
+/*** Start of Sidebar ***/
+
+/*  Start admin footer */
+.admin-content footer {
+    background-color: var(--sidebar-secondary-bg-color);
+    color: var(--secondary-text-color);
+    text-align: center;
+    padding: 7px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/*  End admin footer */
+
+
+
+/**** End admin style ****/
+
+/**** Start Admin Contents ****/
+.admin-content h2 {
+  text-align: center;
+  color: var(--navbar-bg-color);
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+/* Start style of admin reset password*/
+#form-content{
+    margin-top: 120px;
+    /* margin-bottom: 213px; */
+}
+
+#admin-password-form, 
+#admin-login-form,
+#admin-add-product,
+#admin-add-category,
+#admin-delete-category,
+#admin-edit-category,
+#admin-update-category,
+#admin-delete-product,
+#admin-edit-product,
+#admin-update-product  {
+    text-align: center;
+}
+
+#admin-password-form #admin-reset-password, 
+#admin-login-form #admin-email, 
+#admin-login-form #admin-password,
+#admin-add-product #add-product-name,
+#admin-add-category #add-category-name,
+#admin-delete-product #delete-category-select,
+#admin-delete-product #delete-product-select,
+#admin-edit-product #edit-category-select,
+#admin-update-category #update-category-name,
+#admin-add-product  #add-product-name {
+    height: 30px;
+    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    outline: 0;
+    transition: border 0.15s;
+    margin-bottom: 15px;
+}
+#admin-delete-product #delete-category-select,
+#admin-delete-product #delete-product-select,
+#admin-edit-product #edit-category-select {
+  height: 40px;
+  text-overflow: '';
+  border-radius: 2px;
+  color: var(--primary-text-color);
+}
+#admin-delete-product #delete-category-select option,
+#admin-delete-product #delete-product-select option,
+#admin-edit-product #edit-category-select option{
+  background-color: #ced4da;
+  height: 50px;
+}
+#admin-password-form #admin-reset-password:focus, 
+#admin-login-form #admin-email:focus, 
+#admin-login-form #admin-password:focus,
+#admin-add-product #add-product-name:focus,
+#admin-add-category #add-category-name:focus,
+#admin-delete-product #delete-category-select:focus,
+#admin-edit-product #edit-category-select:focus,
+#admin-update-category #update-category-name:focus {
+    border: 1px solid var(--navbar-bg-color);
+    box-shadow: var(--navbar-bg-color) 0 0 5px;
+}
+#admin-password-form .btn, 
+#admin-login-form .btn,
+#admin-add-product .btn,
+#admin-add-category .btn,
+#admin-delete-product .btn,
+#admin-edit-product .btn,
+#admin-update-category .btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 5px;
+    margin: 20px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    color: var(--secondary-text-color);
+}
+/* End style of admin reset password*/
+
+/* Start style of admin messages*/
+#admin-message, #admin-notification {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    margin: 0 auto;
+}
+#admin-message td, #admin-message th , #admin-notification td, #admin-notification th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#admin-message td a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+}
+
+#admin-message tr:nth-child(even), #admin-notification tr:nth-child(even){
+    background-color: var(--secondary-text-color);
+}
+#admin-notification tr:hover{
+    background-color: #f2f2f2;
+}
+#admin-notification td:first-child:hover, #admin-message td:first-child:hover{
+    color: var(--text-warning);
+}
+#admin-message tr:hover, #admin-notification tr:hover {
+    background-color: var(--sidebar-secondary-bg-color);
+    color: var(--secondary-text-color);
+}
+
+#admin-message th, #admin-notification th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: var(--navbar-bg-color);
+color: var(--secondary-text-color);
+}
+
+#admin-message td:first-child, #admin-notification td:first-child, #admin-notification td:last-child, #admin-message td:last-child{
+    text-align: center;
+}
+#admin-notification td:last-child:hover, #admin-message td:last-child:hover {
+    color: var(--text-danger);
+}
+#admin-message td:last-child {
+    text-overflow: ellipsis;
+}
+.admin-message-container, .admin-notification-container {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+[type="file"] {
+  /* height: 0; */
+  overflow: hidden;
+  width: 0;
+}
+[type="file"] + label {
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  /* margin-bottom: 1rem; */
+  padding: 1rem 50px;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+  width: 15%;
+}
+[type="file"] + label.upload-image-btn {
+  background-color: var(--primary-button-color);
+  border-radius: 50px;
+  overflow: hidden;
+}
+[type="file"] + label.upload-image-btn::before {
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f382";
+  right: 100%;
+  line-height: 3.3;
+  position: absolute;
+  top: -1px;
+  transition: all 0.3s;
+}
+[type="file"] + label.upload-image-btn:hover {
+  background-color: var(--hover-primary-button-color);
+}
+[type="file"] + label.upload-image-btn:hover::before {
+  right: 75%;
+}
+
+/* End style of admin messages*/
+
+/**** End Admin Contents ****/
+
+/* ** End admin style ** */
+/*************************************************************************************/
+/* Image preview */
+.preview-container {
+  min-width: 300px;
+  max-width: 420px;
+  height: 300px;
+  margin: 10px auto;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+.upload-options {
+  position: relative;
+  height: 75px;
+  background-color: var(--primary-button-color);
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  transition: background-color ease-in-out 150ms;
+}
+.upload-options:hover {
+  background-color: var(--hover-primary-button-color);
+}
+.upload-options input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.upload-options label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+}
+.upload-options label i {
+  position: absolute;
+  font-size: 2.5rem;
+  color: rgba(230, 230, 230, 1);
+  top: 15px;
+  left: calc(50% - 1.25rem);
+  z-index: 0;
+}
+.upload-options label span {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: center;
+}
+.upload-options label span:hover i.material-icons {
+  color: lightgray;
+}
+.js--image-preview {
+  height: 225px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-image: url('');
+  background-color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.js--image-preview i {
+  position: absolute;
+  font-size: 4.5em;
+  color: rgba(230, 230, 230, 1);
+  top: calc(50% - 3rem);
+  left: calc(50% - 2.25rem);
+  z-index: 0;
+}
+.js--image-preview.js--no-default i {
+  display: none;
+}
+.js--image-preview:nth-child(2) {
+  background-image: url('http://bastianandre.at/giphy.gif');
+}
+i.material-icons {
+  transition: color 100ms ease-in-out;
+  font-size: 2.25em;
+  line-height: 55px;
+  color: white;
+  display: block;
+}
+.drop {
+  display: block;
+  position: absolute;
+  background: rgba(95, 158, 160, 0.2);
+  border-radius: 100%;
+  transform: scale(0);
+}
+.animate {
+  animation: ripple 0.4s linear;
+}
+@keyframes ripple {
+  100% {
+       opacity: 0;
+       transform: scale(2.5);
+ }
+}
